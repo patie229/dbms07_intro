@@ -1,5 +1,6 @@
-#!/usr/bin/env python3
 import math
+from rich.console import Console
+from rich.table import Table
 
 def kreisflaeche(r):
     return math.pi * r ** 2
@@ -7,9 +8,13 @@ def kreisflaeche(r):
 def main():
     radius = 7
     flaeche = kreisflaeche(radius)
-    print(f"Radius:  {radius}")
-    print(f"Fläche:  {flaeche:.4f}")
-    print(f"Wurzel:  {math.sqrt(radius):.4f}")
+
+    table = Table(title="Ergebnisse")
+    table.add_column("Größe", style="cyan")
+    table.add_column("Wert", style="green")
+    table.add_row("Radius",  str(radius))
+    table.add_row("Fläche",  f"{flaeche:.4f}")
+    table.add_row("Wurzel",  f"{math.sqrt(radius):.4f}")
 
 if __name__ == "__main__":
     main()
