@@ -6,6 +6,7 @@ def kreisflaeche(r):
     return math.pi * r ** 2
 
 def main():
+    console = Console()
     radius = 7
     flaeche = kreisflaeche(radius)
 
@@ -15,6 +16,7 @@ def main():
     table.add_row("Radius",  str(radius))
     table.add_row("Fläche",  f"{flaeche:.4f}")
     table.add_row("Wurzel",  f"{math.sqrt(radius):.4f}")
+    console.print(table)
 
 if __name__ == "__main__":
     main()
